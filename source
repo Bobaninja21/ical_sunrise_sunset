@@ -86,7 +86,7 @@ if (isset($_POST['sunrise'])) {
 SUMMARY:Sunrise : ".substr($real_sunrise,0,2).":".substr($real_sunrise,2,2)." AM
 DTSTAMP:$rise_day"."T"."$offset_sunrise
 DTSTART:$rise_day"."T"."$offset_sunrise
-DTEND:$rise_day"."T"."$offset_sunrise
+DTEND:".date("Ymd", strtotime($rise_day))."
 DESCRIPTION:$description
 URL:http://pdxvr.com/ical_sun.php
 END:VEVENT\n";
@@ -113,7 +113,7 @@ if (isset($_POST['sunset'])) {
 SUMMARY:Sunset : ".substr($real_sunset,0,2).":".substr($real_sunset,2,2)." PM
 DTSTAMP:$set_day"."T"."$offset_sunset
 DTSTART:$set_day"."T"."$offset_sunset
-DTEND:$set_day"."T"."$offset_sunset			
+DTEND:".date("Ymd", strtotime($set_day))."
 DESCRIPTION:$description
 URL:http://pdxvr.com/ical_sun.php
 END:VEVENT\n";
